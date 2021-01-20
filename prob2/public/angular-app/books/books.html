@@ -1,0 +1,9 @@
+<p>
+  <input class="search_text" ng-model="searchText.title" placeholder="Enter keyword for searching"/>
+</p>
+
+<ul>
+  <li ng-repeat="book in vm.books | filter: searchText">
+    <a href="#!/books/{{book._id}}">{{book.title | uppercase}}</a> - {{book.price | currency: "$"}}
+  </li>
+</ul>
